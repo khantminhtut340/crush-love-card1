@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Prank Card</title>
+    <style>
+        /* CSS: ဒီဇိုင်းပိုင်း */
+        body { 
+            display: flex; justify-content: center; align-items: center; 
+            height: 100vh; background: #ffe4e1; margin: 0; font-family: sans-serif; 
+            overflow: hidden;
+        }
+        .card { 
+            background: white; padding: 30px; border-radius: 25px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 280px; 
+        }
+        .cartoon-img { width: 140px; height: auto; margin-bottom: 15px; }
+        h2 { color: #ff4d6d; font-size: 20px; margin-bottom: 25px; }
+        .buttons { position: relative; height: 50px; }
+        button { 
+            padding: 12px 25px; border: none; border-radius: 50px; 
+            cursor: pointer; font-weight: bold; position: absolute; transition: 0.1s;
+        }
+        #yesBtn { background: #ff4d6d; color: white; left: 20px; }
+        #noBtn { background: #adb5bd; color: white; right: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHR0bmZpZ3R4bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0bmZ0JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZ力をZXZlbnRfaWQlM0Qx/vFKqnCdLPNOKc/giphy.gif" class="cartoon-img">
+        <h2>ပြန်ချစ်ပါလားဟင်? ❤️</h2>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        /* JavaScript: ခလုတ်ပြေးတဲ့အပိုင်း */
+        const noBtn = document.getElementById('noBtn');
+        const move = () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        };
+
+        // Mouse နဲ့ထိရင်ဖြစ်ဖြစ်၊ ဖုန်းနဲ့ထိရင်ဖြစ်ဖြစ် ပြေးမယ်
+        noBtn.addEventListener('mouseover', move);
+        noBtn.addEventListener('touchstart', (e) => { 
+            e.preventDefault(); 
+            move(); 
+        });
+
+        // Yes နှိပ်ရင် Message ပြမယ်
+        document.getElementById('yesBtn').onclick = () => {
+            alert("ချစ်တယ်ဆိုတာ သိသားပဲ! 🥰");
+        };
+    </script>
+
+</body>
+</html>
